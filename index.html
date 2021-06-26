@@ -26,6 +26,22 @@
 
         //2.通过mount函数，将vnode挂载到app
         mount(vnode, document.querySelector("#app"))
+
+
+        //3. 创建新的vnode
+        const vnode1 = h('div', {
+            class: "aaa"
+        }, [
+            h('div', null, '练习h函数'),
+            h('button', {
+                onclick: function() {
+                    console.log('按钮')
+                }
+            }, '按钮')
+        ])
+        setTimeout(() => {
+            patch(vnode, vnode1)
+        }, 2000)
     </script>
 </body>
 
